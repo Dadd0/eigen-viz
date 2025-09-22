@@ -1,0 +1,10 @@
+[project]
+name = "math-for-ml"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "marimo>=0.16.0",
+    "matplotlib>=3.10.6",
+    "numpy>=2.3.3",
+    "wigglystuff>=0.2.0",
+]
