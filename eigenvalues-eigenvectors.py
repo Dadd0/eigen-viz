@@ -31,7 +31,7 @@ def _(A, np):
 @app.cell
 def _(mo):
     mo.md(
-        """
+        r"""
     # Eigenvalue and Eigenvectors Visualizer
     <hr>
     <br>
@@ -58,7 +58,7 @@ def _(A, mo):
 @app.cell
 def _(eigenvalues, mo):
     mo.center(mo.md(
-                    f"""
+                    rf"""
                     **Eigenvalues**:
                         [$\lambda_1={eigenvalues[0]}$
                         $\lambda_2={eigenvalues[1]}$]
@@ -225,7 +225,7 @@ def _(A_3d, mo):
 @app.cell
 def _(eigenvalues_3d, mo):
     mo.center(mo.md(
-                    f"""
+                    rf"""
                     **Eigenvalues**:
                         [$\lambda_1={eigenvalues_3d[0]}$
                         $\lambda_2={eigenvalues_3d[1]}$,
@@ -257,7 +257,7 @@ def _(np, plt):
 def _(np, original_points, plt):
     def plot_transformed_points_and_eigenvectors(matrix_widget):
             matrix = np.array(matrix_widget.value["matrix"])
-    
+
             transformed_points = original_points.T @ matrix
             eigenvalues, eigenvectors = np.linalg.eig(matrix)
 
@@ -274,7 +274,7 @@ def _(np, original_points, plt):
             colors = ['#ED3F27', '#134686', '#28A745']
             for i in range(3):
                 vec = eigenvalues[i] * eigenvectors[:, i] * 10  
-            
+
 
                 ax_transformed.quiver(0, 0, 0, vec[0], vec[1], vec[2], 
                                      color=colors[i], 
@@ -288,13 +288,13 @@ def _(np, original_points, plt):
                                    linewidth=2, 
                                    alpha=0.3,
                                    zorder=999 + i)
-            
+
                 ax_transformed.text(vec[0], vec[1], vec[2], f"λ{i+1}", 
                                    color=colors[i], 
                                    fontsize=10, 
                                    fontweight='bold',
                                    zorder=2000 + i)
-        
+
             ax_transformed.scatter([0], [0], [0], 
                                   color='black', 
                                   s=100, 
@@ -305,12 +305,12 @@ def _(np, original_points, plt):
 
             ax_transformed.view_init(elev=20, azim=45)
             ax_transformed.grid(True, alpha=0.3)
-        
+
             ax_transformed.set_title("Transformed Data", fontsize=9, fontweight="bold")
             ax_transformed.set_xlabel('X')
             ax_transformed.set_ylabel('Y')
             ax_transformed.set_zlabel('Z')
-        
+
             return fig_transformed, np.round(eigenvalues, 2)
     return (plot_transformed_points_and_eigenvectors,)
 
