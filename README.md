@@ -11,6 +11,7 @@ I created Eigen-Viz because I really like linear algebra, but found that most le
 - 🚀 Visualize eigenvalues and eigenvectors for custom matrices
 - 🎨 Interactive matrix editor and real-time updates
 - 📊 Dynamic plots for geometric interpretation
+- [In Progress] PageRank Algorithm visualization as an eigenvector
 
 ## Screenshots
 
