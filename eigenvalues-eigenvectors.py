@@ -17,7 +17,7 @@ def _():
 
 @app.cell
 def _(Matrix, mo):
-    A = mo.ui.anywidget(Matrix(cols=2, rows=2))
+    A = mo.ui.anywidget(Matrix(cols=2, rows=2, matrix=[[1,0], [0,1]]))
     return (A,)
 
 
@@ -205,7 +205,7 @@ def _(mo):
 
 @app.cell
 def _(Matrix, mo):
-    A_3d = mo.ui.anywidget(Matrix(cols=3, rows=3))
+    A_3d = mo.ui.anywidget(Matrix(cols=3, rows=3, matrix=[[1, 0, 0], [0, 1, 0], [0, 0, 1]]))
     return (A_3d,)
 
 
